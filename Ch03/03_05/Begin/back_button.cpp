@@ -16,6 +16,18 @@ int main(){
 		cin>>temp;
 		if(temp=="exit")
 			break;	
+		if (temp=="1"){
+			cout<< "Enter URL: ";
+			cin>> temp;
+			back_stack.push(temp);
+		}
+		else if (temp=="2"){
+			cout << "Going back..\n";
+			back_stack.pop();
+		}
+		if (back_stack.empty())
+			break;
+		cout << "Current URL: "<< back_stack.top() << endl;
 	}
 	return 0;
 }

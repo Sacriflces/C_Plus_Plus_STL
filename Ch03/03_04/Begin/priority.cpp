@@ -1,4 +1,4 @@
-// std::queue demo
+// std::priority_queue demo
 // by Eduardo Corpeño
 
 #include <iostream>
@@ -7,7 +7,7 @@
 using namespace std;
 
 int main(){
-	queue<int> numbers;
+	priority_queue<int> numbers;
 	int temp;
 	
 	cout<<"Pushing...\n";
@@ -20,7 +20,7 @@ int main(){
 	
 	cout<<"{  ";
 	while(numbers.size()>0){
-		cout<<numbers.front();
+		cout<<numbers.top();
 		numbers.pop();
 		cout<<"  ";
 	}

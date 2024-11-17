@@ -2,12 +2,12 @@
 // by Eduardo Corpeño
 
 #include <iostream>
-#include <stack>
+#include <queue>
 
 using namespace std;
 
 int main(){
-	stack<int> numbers;
+	queue<int> numbers;
 	int temp;
 	
 	cout<<"Pushing...\n";
@@ -20,7 +20,7 @@ int main(){
 	
 	cout<<"{  ";
 	while(numbers.size()>0){
-		cout<<numbers.top();
+		cout<<numbers.front();
 		numbers.pop();
 		cout<<"  ";
 	}
