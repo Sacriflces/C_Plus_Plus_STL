@@ -8,28 +8,35 @@
 using namespace std;
 
 int main(){
-	map<> pins;
+	map<pair<int,int>,string> pins;
 	int temp=0;
 	string str;
-	pair<> p;
-	
+	pair<pair<int,int>,string> p;
+	pair<int,int> landmark;
+
 	cout<<"Inserting...\n";
 	while(temp>=0){
-		cout<<"Enter key: ";
+		cout<<"Enter latitude: ";
 		getline(cin,str);
 		temp=stoi(str);
 		if(temp>=0){
-			p.first=temp;
+			landmark.first=temp;
+			cout << "Enter longitude: ";
+			getline(cin,str);
+			temp = stoi(str);
+			landmark.second=temp;
+			p.first=landmark;
+
 			cout<<"Enter name: ";
 			getline(cin,str);
 			p.second=str;
-			this_map.insert(p);
+			pins.insert(p);
 		}
 	}
 	
 	cout<<"{   ";
-	for(auto it = this_map.begin(); it!=this_map.end();it++)
-		cout << it->first << "->" << it->second << "   ";
+	for(auto it = pins.begin(); it!=pins.end();it++)
+		cout << it->first.first << "," << it->first.second << "->" << it->second << "   ";
 	cout<<"}\n";
 		
 	return 0;
